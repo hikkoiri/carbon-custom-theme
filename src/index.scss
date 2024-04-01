@@ -1,0 +1,21 @@
+$orange:#FFAB36;
+$darker-orange:  #F78104;
+$even-darker-orange:  #F78104;
+$gray: #5A5A5A,;
+
+
+@use '@carbon/react/scss/themes' as *;
+
+//overriding theme tokens and adding a custom token
+@use '@carbon/react/scss/theme' with (
+  $theme: (
+    // redefine existing tokens to new values
+    focus: $gray,
+  )
+);
+@use '@carbon/react/scss/components/button/tokens' as button-tokens with (
+  $button-primary:$orange,
+  $button-primary-hover: $darker-orange,
+  $button-primary-active: $even-darker-orange
+);
+@use '@carbon/react';
